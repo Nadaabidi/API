@@ -1,4 +1,10 @@
 {
+   "type": "postgres",
+   "host": "localhost",
+   "port": 5432,
+   "username": "postgres",
+   "password": "nada",
+   "database": "dbFood_Gleaner",
    "synchronize": true,
    "logging": false,
    "entities": [

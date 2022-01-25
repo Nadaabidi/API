@@ -1,11 +1,11 @@
-import {Entity, PrimaryGeneratedColumn, Column, OneToMany} from "typeorm";
+import { Column, Entity, OneToMany, PrimaryGeneratedColumn} from "typeorm";
 import { RefreshToken } from "./RefreshToken";
 
 @Entity()
-export class User {
+export class Owner {
 
     @PrimaryGeneratedColumn()
-    id: number;
+    ownerid: number;
 
     @Column()
     username: string;
@@ -15,8 +15,9 @@ export class User {
 
 
     @Column()
-    password:string;
-    @OneToMany(type => RefreshToken, refreshToken => refreshToken.user)
+    passwd:string;
+    
+    @OneToMany(() => RefreshToken, refToken => refToken.owner)
     refreshTokens: RefreshToken;
 
 }
